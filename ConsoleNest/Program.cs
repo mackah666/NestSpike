@@ -26,19 +26,22 @@ namespace ConsoleNest
             var blogPost = new BlogPost
             {
                 Id = Guid.NewGuid(),
-                Title = "First blog post",
+                Title = "Second blog post",
                 Body = "This is very long blog post!"
             };
 
-            var firstId = blogPost.Id;
-
-            //time to post to elastic
+            var blogId = blogPost.Id;
 
 
-            var res1= elastic.Index(blogPost, p => p
-                .Index("my_first_index")
-                .Id(blogPost.Id.ToString())
-                .Refresh());
+            var res1 = elastic.Index(blogPost, p => p
+                 .Index("my_first_index")
+                 .Id(blogPost.Id.ToString())
+                 .Refresh());
+
+            var resGet = elastic.Get<BlogPost>();
+
+            Console.WriteLine(resGet.Source);
+            //elastic.Get<BlogPost>
 
             Console.ReadLine();
         }

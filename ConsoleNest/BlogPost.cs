@@ -10,7 +10,7 @@ namespace ConsoleNest
     [ElasticsearchType(IdProperty = "Id", Name = "blog_post")]
     public class BlogPost
     {
-        [String(Name = "_id", Index = FieldIndexOption.NotAnalyzed)]
+        //[String(Name = "_id", Index = FieldIndexOption.NotAnalyzed)]
         public Guid? Id { get; set; }
 
         [String(Name = "title", Index = FieldIndexOption.Analyzed)]
