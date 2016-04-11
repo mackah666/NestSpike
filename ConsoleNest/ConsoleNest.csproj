@@ -58,6 +58,8 @@
     <Compile Include="BlogPost.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="NeoTweet.cs" />
+    <Compile Include="Tweet.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
